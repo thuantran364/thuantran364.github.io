@@ -86,7 +86,7 @@
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $(".back-to-top").fadeIn("slow");
-      $(".navbar").css("background-color", "rgba(103, 176, 209, 0.8)");
+      $(".navbar").css("background-color", "rgba(103, 176, 209)");
       $(".navbar-collapse.collapse.show").css({
         cssText: "background-color: transparent",
       });
