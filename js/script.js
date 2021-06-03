@@ -67,14 +67,14 @@
 
   $(window).resize(function () {
     let width = $(window).width();
-    if (width > 767.98) {
+    if (width > 750) {
       $(".navbar-collapse.collapse.show").css({
         cssText: "background-color: transparent !important",
       });
       $(
         ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
       ).css({ cssText: "color: #fff !important" });
-    } else if (width < 767.98) {
+    } else if (width < 750) {
       $(".navbar-collapse.collapse.show").css("background-color", "#fff");
       $(
         ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
@@ -102,7 +102,7 @@
       ).css({ cssText: "color: #000 !important" });
     }
   });
-  
+
   $(".back-to-top").click(function () {
     $("html, body").animate(
       {
