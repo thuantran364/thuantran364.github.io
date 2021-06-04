@@ -69,12 +69,14 @@
     let width = $(window).width();
     if (width > 750) {
       $(".navbar-collapse.collapse.show").css({
-        cssText: "background-color: transparent !important",
+        cssText: "background-color: transparent",
       });
       $(
         ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
       ).css({ cssText: "color: #fff !important" });
-    } else if (width < 750) {
+      $(".navbar-collapse.collapse").collapse("hide");
+    } else if (width < 768) {
+      $(".navbar-collapse.collapse").collapse("hide");
       $(".navbar-collapse.collapse.show").css("background-color", "#fff");
       $(
         ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
