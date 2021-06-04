@@ -64,34 +64,38 @@
     $(".navbar").toggleClass("hidden", scrollToHide > scrollNav);
     scrollNav = scrollToHide;
   });
-
   $(window).resize(function () {
     let width = $(window).width();
     if (width > 750) {
-      $(".navbar-collapse.collapse.show").css({
-        cssText: "background-color: transparent",
-      });
       $(
         ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
       ).css({ cssText: "color: #fff !important" });
-      $(".navbar-collapse.collapse").collapse("hide");
+      $(".navbar-collapse.collapse")
+        .css("background-color", "transparent")
+        .collapse("hide")
+        .children(".navbar-nav")
+        .children(".nav-item")
+        .children(".nav-link")
+        .css({ cssText: "color: #fff !important" });
     } else if (width < 768) {
-      $(".navbar-collapse.collapse").collapse("hide");
-      $(".navbar-collapse.collapse.show").css("background-color", "#fff");
-      $(
-        ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
-      ).css({ cssText: "color: #000 !important" });
+      $(".navbar-collapse.collapse")
+        .css("background-color", "#fff")
+        .collapse("hide")
+        .children(".navbar-nav")
+        .children(".nav-item")
+        .children(".nav-link")
+        .css({ cssText: "color: #000 !important" });
     }
   });
-
   // back to top
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $(".back-to-top").fadeIn("slow");
       $(".navbar").css("background-color", "rgba(103, 176, 209)");
-      $(".navbar-collapse.collapse.show").css({
-        cssText: "background-color: transparent",
-      });
+      $(".navbar-collapse.collapse.show").css(
+        "background-color",
+        "transparent"
+      );
       $(
         ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
       ).css({ cssText: "color: #fff !important" });
