@@ -1,4 +1,24 @@
 !(function ($) {
+  // scroll view center
+  $(document).on(
+    "click",
+    ".navbar-brand, .nav-link, .dropdown-item, .btn-down",
+    function () {
+      var scrollView = $("#top-header").outerHeight() + 60;
+      var locate = $(this.hash);
+      if (locate.length) {
+        var scrollto = locate.offset().top - scrollView;
+        $("html, body").animate(
+          {
+            scrollTop: scrollto,
+          },
+          500,
+          "easeInQuad"
+        );
+        return false;
+      }
+    }
+  );
   // jQuery counterUp
   $('[data-toggle="count-up"]').counterUp({
     delay: 10,
@@ -114,9 +134,10 @@
       {
         scrollTop: 0,
       },
-      300,
+      500,
       "easeInQuad"
     );
     return false;
   });
+  // scroll
 })(jQuery);

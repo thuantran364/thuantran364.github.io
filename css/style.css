@@ -26,9 +26,6 @@
   box-sizing: border-box;
   text-decoration: none !important;
 }
-html {
-  scroll-behavior: smooth;
-}
 @font-face {
   font-family: Roboto-Medium;
   src: url(../font/Roboto-Medium.ttf);
@@ -200,6 +197,7 @@ body {
 /* services */
 .services {
   padding: 60px 0;
+  justify-content: center;
 }
 .icon-services {
   font-size: 48px;
