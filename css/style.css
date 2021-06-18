@@ -422,7 +422,7 @@ body {
   display: block;
   text-align: center;
 }
-.social-media {
+.social-media-icon {
   display: flex;
   justify-content: space-between;
 }
@@ -782,7 +782,7 @@ body {
   cursor: pointer;
 }
 
-#val {
+.value-file {
   width: 400px;
   height: 25px;
   position: absolute;
