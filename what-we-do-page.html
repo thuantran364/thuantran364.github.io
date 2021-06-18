@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/library/bootstrap.min.css">
+    <!-- calender -->
+    <link rel="stylesheet" href="css/library/style.css">
+    <link rel="stylesheet" href="css/library/theme.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="font-awesome/css/all.min.css">
+    <!-- aos -->
+    <link rel="stylesheet" href="css/library/aos.css">
+    <link rel="stylesheet" href="css/calendar-library/mobiscroll.jquery.min.css">
+    <!-- slick -->
+    <link rel="stylesheet" href="css/library/slick-theme.css">
+    <link rel="stylesheet" href="css/library/slick.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- nav, top header -->
+    <header class="top-header" id="top-header">
+        <nav class="navbar navbar-expand-md fixed-top">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html"><img class="logo-icon" src="images/svg/logo.svg"
+                        alt=""></a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="whopage.html">WHY</a>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">WHO <i class="fas fa-caret-left icon-dropdown"></i></a>
+                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
+                                <div class="dropdown-items">
+                                    <h1 class="title-dropdown">Who do we work with?</h1>
+                                    <div class="row row-nav-full">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="partners-page.html"
+                                                        class="title-dropdown-item">Clients</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
+                                                    lines</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="the-team-page.html"
+                                                        class="title-dropdown-item">The
+                                                        team</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about the team over about two
+                                                    lines</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="trusted-partners-page.html"
+                                                        class="title-dropdown-item">Preferred
+                                                        partners</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy explaining our preferred partners
+                                                    over about two lines</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">WHAT <i class="fas fa-caret-left icon-dropdown"></i></a>
+                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
+                                <div class="dropdown-items">
+                                    <h1 class="title-dropdown">What can we do together?</h1>
+                                    <div class="row row-nav-full">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="what-we-do-page.html"
+                                                        class="title-dropdown-item">Discovery</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
+                                                    lines</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#"
+                                                        class="title-dropdown-item">Design</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about the team over about two
+                                                    lines</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#"
+                                                        class="title-dropdown-item">Development</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
+                                                    about two lines</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row-nav-full">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#"
+                                                        class="title-dropdown-item">Suport</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
+                                                    lines</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#"
+                                                        class="title-dropdown-item">Counslting</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about the team over about two
+                                                    lines</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="case-studies-page.html"
+                                                        class="title-dropdown-item">Case
+                                                        Studies</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
+                                                    about two lines</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">HOW <i class="fas fa-caret-left icon-dropdown"></i></a>
+                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
+                                <div class="dropdown-items">
+                                    <h1 class="title-dropdown">How do we work?</h1>
+                                    <div class="row row-nav-full">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="how-we-work-page.html"
+                                                        class="title-dropdown-item">Managing
+                                                        projects</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
+                                                    lines</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">Design
+                                                        practice</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about the team over about two
+                                                    lines</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#"
+                                                        class="title-dropdown-item">Accessibility</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
+                                                    about two lines</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row row-nav-full">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">How we
+                                                        use technology</a>
+                                                </h3>
+                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
+                                                    lines</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#"
+                                                        class="title-dropdown-item">Hosting</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy about the team over about two
+                                                    lines</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="item-dropdown">
+                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">Quality
+                                                        Assurance</a></h3>
+                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
+                                                    about two lines</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lets-talk.html">CONNECT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- what we do -->
+    <section class="what-we-do bg-info-wwd">
+        <div class="container">
+            <h1 >What we do</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, esse repellendus! Culpa architecto id est
+                ut maiores? Sunt impedit asperiores maiores temporibus eligendi nisi dolorem tempore, id quidem, eveniet
+                similique.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint placeat adipisci provident. Sequi alias
+                quia cupiditate quas, exercitationem illum possimus unde minima porro ullam quibusdam, reprehenderit
+                voluptas inventore magnam eligendi!
+            </p>
+        </div>
+    </section>
+    <!-- what we do end -->
+    <!-- discovery -->
+    <section class="discovery box-content-wwd" data-aos="fade-up" data-aos-delay="100">
+        <div class="container ">
+            <div class="line-bottom">
+                <h1 class="title">Discovery</h1>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero veritatis accusantium
+                            nostrum
+                            dolor eveniet autem voluptatem cumque animi saepe amet iusto nisi ab ad quos id ipsa eum,
+                            necessitatibus labore.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo dolor, assumenda delectus
+                            voluptatibus repudiandae atque laboriosam eaque quasi labore tempore aspernatur pariatur
+                            nesciunt doloribus in ratione iste animi minus consequuntur.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>Nemo dolor, assumenda delectus
+                                voluptatibus repudiandae atque laboriosam</li>
+                            <li>nesciunt doloribus in ratione iste animi minus consequuntur.</li>
+                        </ul>
+                        <a href="#" class="btn-read-how btn-wwd">Read how it worked for MCRI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- discovery end - -->
+    <!-- design -->
+    <section class="design box-content-wwd bg-info-wwd" data-aos="fade-up" data-aos-delay="150">
+        <div class="container">
+            <div class="line-bottom">
+                <div class="accordion-container">
+                    <h1 class="title-faq title">Design</h1>
+                    <div class="faq-content-box">
+                        <div class="faq-title">
+                            UI Design
+                            <i class="icon-faq fa fa-plus"></i>
+                        </div>
+                        <div class="content">
+                            <div class="content-detail">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="images/450x450.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            do
+                                            eiusmod tempor incididunt
+                                            ut labore et dolore magna.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis id
+                                            est
+                                            optio! Earum neque repellendus eum voluptatibus culpa quam delectus
+                                            necessitatibus
+                                            aliquam, enim labore reiciendis nisi molestias dolores fuga?
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam natus fugiat
+                                            quas?
+                                            Ea pariatur, voluptatum incidunt dolores rerum magni, reprehenderit,
+                                            doloribus
+                                            facere ducimus animi nam. Hic quis quos vitae provident?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-content-box">
+                        <div class="faq-title">
+                            UX Design
+                            <i class="icon-faq fa fa-plus"></i>
+                        </div>
+                        <div class="content">
+                            <div class="content-detail">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="images/450x450.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            do
+                                            eiusmod tempor incididunt
+                                            ut labore et dolore magna.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis id
+                                            est
+                                            optio! Earum neque repellendus eum voluptatibus culpa quam delectus
+                                            necessitatibus
+                                            aliquam, enim labore reiciendis nisi molestias dolores fuga?
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam natus fugiat
+                                            quas?
+                                            Ea pariatur, voluptatum incidunt dolores rerum magni, reprehenderit,
+                                            doloribus
+                                            facere ducimus animi nam. Hic quis quos vitae provident?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-content-box">
+                        <div class="faq-title">
+                            Branding
+                            <i class="icon-faq fa fa-plus"></i>
+                        </div>
+                        <div class="content">
+                            <div class="content-detail">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="images/450x450.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            do
+                                            eiusmod tempor incididunt
+                                            ut labore et dolore magna.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis id
+                                            est
+                                            optio! Earum neque repellendus eum voluptatibus culpa quam delectus
+                                            necessitatibus
+                                            aliquam, enim labore reiciendis nisi molestias dolores fuga?
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam natus fugiat
+                                            quas?
+                                            Ea pariatur, voluptatum incidunt dolores rerum magni, reprehenderit,
+                                            doloribus
+                                            facere ducimus animi nam. Hic quis quos vitae provident?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- design end-->
+    <!-- development -->
+    <section class="development box-content-wwd" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+            <div class="development line-bottom">
+                <div class="accordion-container">
+                    <h1 class="title-faq title">Development</h1>
+                    <div class="faq-content-box">
+                        <div class="faq-title">
+                            Website
+                            <i class="icon-faq fa fa-plus"></i>
+                        </div>
+                        <div class="content">
+                            <div class="content-detail">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="images/450x450.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            do
+                                            eiusmod tempor incididunt
+                                            ut labore et dolore magna.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis id
+                                            est
+                                            optio! Earum neque repellendus eum voluptatibus culpa quam delectus
+                                            necessitatibus
+                                            aliquam, enim labore reiciendis nisi molestias dolores fuga?
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam natus fugiat
+                                            quas?
+                                            Ea pariatur, voluptatum incidunt dolores rerum magni, reprehenderit,
+                                            doloribus
+                                            facere ducimus animi nam. Hic quis quos vitae provident?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-content-box">
+                        <div class="faq-title">
+                            Digital PLatforms
+                            <i class="icon-faq fa fa-plus"></i>
+                        </div>
+                        <div class="content">
+                            <div class="content-detail">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="images/450x450.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            do
+                                            eiusmod tempor incididunt
+                                            ut labore et dolore magna.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis id
+                                            est
+                                            optio! Earum neque repellendus eum voluptatibus culpa quam delectus
+                                            necessitatibus
+                                            aliquam, enim labore reiciendis nisi molestias dolores fuga?
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam natus fugiat
+                                            quas?
+                                            Ea pariatur, voluptatum incidunt dolores rerum magni, reprehenderit,
+                                            doloribus
+                                            facere ducimus animi nam. Hic quis quos vitae provident?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-content-box">
+                        <div class="faq-title">
+                            Apps
+                            <i class="icon-faq fa fa-plus"></i>
+                        </div>
+                        <div class="content">
+                            <div class="content-detail">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img src="images/450x450.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            do
+                                            eiusmod tempor incididunt
+                                            ut labore et dolore magna.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam nobis id
+                                            est
+                                            optio! Earum neque repellendus eum voluptatibus culpa quam delectus
+                                            necessitatibus
+                                            aliquam, enim labore reiciendis nisi molestias dolores fuga?
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam natus fugiat
+                                            quas?
+                                            Ea pariatur, voluptatum incidunt dolores rerum magni, reprehenderit,
+                                            doloribus
+                                            facere ducimus animi nam. Hic quis quos vitae provident?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- development end-->
+    <!-- support -->
+    <section class="support box-content-wwd bg-info-wwd" data-aos="fade-up" data-aos-delay="250">
+        <div class="container">
+            <div class="support line-bottom">
+                <h1 class="title">Support</h1>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero veritatis accusantium
+                            nostrum
+                            dolor eveniet autem voluptatem cumque animi saepe amet iusto nisi ab ad quos id ipsa eum,
+                            necessitatibus labore.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo dolor, assumenda delectus
+                            voluptatibus repudiandae atque laboriosam eaque quasi labore tempore aspernatur pariatur
+                            nesciunt doloribus in ratione iste animi minus consequuntur.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>Nemo dolor, assumenda delectus
+                                voluptatibus repudiandae atque laboriosam</li>
+                            <li>nesciunt doloribus in ratione iste animi minus consequuntur.</li>
+                        </ul>
+                        <a href="#" class="btn-read-how btn-wwd">Read how it worked for MCRI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- support end -->
+    <!-- consulting -->
+    <section class="consulting box-content-wwd" data-aos="fade-up" data-aos-delay="300">
+        <div class="container">
+            <div class="consulting line-bottom line-bottom">
+                <h1 class="title">Consulting</h1>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero veritatis accusantium
+                            nostrum
+                            dolor eveniet autem voluptatem cumque animi saepe amet iusto nisi ab ad quos id ipsa eum,
+                            necessitatibus labore.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo dolor, assumenda delectus
+                            voluptatibus repudiandae atque laboriosam eaque quasi labore tempore aspernatur pariatur
+                            nesciunt doloribus in ratione iste animi minus consequuntur.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>Nemo dolor, assumenda delectus
+                                voluptatibus repudiandae atque laboriosam</li>
+                            <li>nesciunt doloribus in ratione iste animi minus consequuntur.</li>
+                        </ul>
+                        <a href="#" class="btn-read-how btn-wwd">Read how it worked for MCRI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- consulting end -->
+    <!-- question -->
+    <section class="question-contact bg-info-wwd" data-aos="fade-in" data-aos-delay="100">
+        <div class="container">
+            <div class="question-details">
+                <h1 class="question-title">Are you ready to become a Butterfly?</h1>
+                <a href="#" class="btn-contact-us">Contact us</a>
+            </div>
+        </div>
+    </section>
+    <!-- question end -->
+    <!-- more info -->
+    <section class="more-info">
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit praesentium ratione aut dolorum
+                exercitationem laboriosam hic eos modi, voluptatum tempore, delectus obcaecati! Facere tempora nulla
+                corrupti odio voluptas velit ab?</p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>More of this</h3>
+                    <p>Valuing relationships</p>
+                    <p>High quality digital solutions</p>
+                    <p>Collaboration</p>
+                    <p>Eating dounts</p>
+                    <p>Exceeding expections</p>
+                    <p>Valuing relationships</p>
+                    <p>High quality digital solutions</p>
+                    <p>Collaboration</p>
+                    <p>Eating dounts</p>
+                    <p>Exceeding expections</p>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Less of this</h3>
+                    <p>Valuing relationships</p>
+                    <p>High quality digital solutions</p>
+                    <p>Collaboration</p>
+                    <p>Eating dounts</p>
+                    <p>Exceeding expections</p>
+                    <p>Valuing relationships</p>
+                    <p>High quality digital solutions</p>
+                    <p>Collaboration</p>
+                    <p>Eating dounts</p>
+                    <p>Exceeding expections</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end -->
+    <!-- case studies -->
+    <section class="case-sdtudies bg-info-wwd">
+        <div class="container">
+            <h1 class="title">Case studies</h1>
+            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, nisi, expedita cupiditate pariatur
+                earum.</h2>
+            <div class="case-studies-content-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="detail-content">
+                            <h4><a href="#" class="title-post-index">Mission Australia</a></h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime deserunt cumque, impedit
+                                necessitatibus in rem earum animi, nemo ipsa nobis sint inventore. Veniam illum, dolore
+                                labore quis quia aperiam consequatur!</p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima alias est, atque illo
+                                assumenda ducimus! Perspiciatis ex numquam, incidunt molestias officia velit id amet a
+                                reprehenderit aut, libero ipsa eligendi.
+                            </p>
+                        </div>
+                        <div class="link-content">
+                            <span><a href="#" class="line-right links-info">Platform builds</a> <a href="#"
+                                    class="line-right links-info">Food</a> 4 min read</span>
+                            <a href="#" class="btn-read-more-wwd btn-wwd">READ MORE</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="images/400x400.png" alt="" class="img-fluid img-case">
+                    </div>
+                </div>
+            </div>
+            <div class="case-studies-content-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="detail-content">
+                            <h4><a href="#" class="title-post-index">MCRI</a></h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime deserunt cumque, impedit
+                                necessitatibus in rem earum animi, nemo ipsa nobis sint inventore. Veniam illum, dolore
+                                labore quis quia aperiam consequatur!</p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima alias est, atque illo
+                                assumenda ducimus! Perspiciatis ex numquam, incidunt molestias officia velit id amet a
+                                reprehenderit aut, libero ipsa eligendi.
+                            </p>
+                        </div>
+                        <div class="link-content">
+                            <span><a href="#" class="line-right links-info">Platform builds</a> <a href="#"
+                                    class="line-right links-info">Food</a> 4 min read</span>
+                            <a href="#" class="btn-read-more-wwd btn-wwd">READ MORE</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="images/400x400.png" alt="" class="img-fluid img-case">
+                    </div>
+                </div>
+            </div>
+            <div class="case-studies-content-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="detail-content">
+                            <h4><a href="#" class="title-post-index">Monash FODMAP</a></h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime deserunt cumque, impedit
+                                necessitatibus in rem earum animi, nemo ipsa nobis sint inventore. Veniam illum, dolore
+                                labore quis quia aperiam consequatur!</p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima alias est, atque illo
+                                assumenda ducimus! Perspiciatis ex numquam, incidunt molestias officia velit id amet a
+                                reprehenderit aut, libero ipsa eligendi.
+                            </p>
+                        </div>
+                        <div class="link-content">
+                            <span><a href="#" class="line-right links-info">Platform builds</a> <a href="#"
+                                    class="line-right links-info">Food</a> 4 min read</span>
+                            <a href="#" class="btn-read-more-wwd btn-wwd">READ MORE</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="images/400x400.png" alt="" class="img-fluid img-case">
+                    </div>
+                </div>
+            </div>
+            <a href="/case-studies-page.html" class="btn-view-more btn-wwd">View more case Studies</a>
+        </div>
+    </section>
+    <!-- case studies end-->
+    <!-- question -->
+    <section class="question-contact" data-aos="fade-in" data-aos-delay="100">
+        <div class="container">
+            <div class="question-details">
+                <h1 class="question-title">Are you ready to become a Butterfly?</h1>
+                <a href="#" class="btn-contact-us">Contact us</a>
+            </div>
+        </div>
+    </section>
+    <!-- question end -->
+    <!-- to top -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+    <!-- to top end -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <section class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 contact-info" data-aos="fade-up" data-aos-delay="200">
+                        <h2>Contact us</h2>
+                        <p>level 5, 250 Queesn St Melbourne, Victoria 3000</p>
+                        <span class="contacts">
+                            Phone: <a href="tel:+61 3 9009 9601" class="contact-phone">+61 3 9009 9601</a>
+                        </span>
+                        <span class="contacts">
+                            Email: <a href="mailto:hello@butterfly.com.au"
+                                class="contact-mail">hello@butterfly.com.au</a>
+                        </span>
+                        <p class="contact-content" data-aos="fade-in" data-aos-delay="500">We work on the
+                            traditional lands of the peoples of the Kulin
+                            nation, and pay our
+                            respects
+                            to elders, past present and emerging</p>
+                    </div>
+                    <div class="col-lg-4 contact-info" data-aos="fade-up" data-aos-delay="300">
+                        <ul class="blog">
+                            <h2 class="title-blog-contact"><a href="think-pieces-page.html" class="blog-link">Blog</a>
+                            </h2>
+                            <li class="item-blog"><a href="#" class="blog-item">Blog 1</a></li>
+                            <li class="item-blog"><a href="#" class="blog-item">Blog 2</a></li>
+                            <li class="item-blog"><a href="#" class="blog-item">Blog 3</a></li>
+                            <li class="item-blog"><a href="#" class="blog-item">Blog 3</a></li>
+                            <li class="item-blog"><a href="#" class="blog-item">Blog 4</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 contact-info">
+                        <div class="social-media">
+                            <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="350">
+                                <i class="fab fa-twitter icon-contact"></i>
+                            </a>
+                            <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="400">
+                                <i class="fab fa-facebook-f icon-contact"></i>
+                            </a>
+                            <a href="#" class="social-link" data-aos="fade-up" data-aos-delay="450">
+                                <i class="fab fa-instagram icon-contact"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer-bottom">
+            <div class="container">
+                <div class="services">
+                    <a href="#" class="services-detail">We follow the Australian Privacy Principles</a>
+                    <a href="#" class="services-detail">General Privacy Prolicy</a>
+                    <a href="#" class="services-detail">Terms & Conditions</a>
+                    <a href="#" class="services-detail">Discalaimer</a>
+                    <a href="#" class="services-detail">Cookie</a>
+                </div>
+                <div class="copy-right">
+                    <p>Copyrigh &copy; Butterfly. All rights reserved.</p>
+                    <p class="author-design-page">Website design by <span><img src="images/svg/logo-footer.svg"
+                                alt=""></span>
+                        BUTTERFLY
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- jquery -->
+        <script src="js/library/jquery.min.js"></script>
+        <!-- calendar -->
+        <script src="js/library/calendar.min.js"></script>
+        <!-- jquery UI -->
+        <script src="js/library/jquery-ui.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/library/bootstrap.min.js"></script>
+        <!-- jquery-easing -->
+        <script src="js/library/jquery.easing.min.js"></script>
+        <!-- aos -->
+        <script src="js/library/aos.js"></script>
+        <!-- calendar library -->
+        <script src="js/calendar-library/mobiscroll.jquery.min.js"></script>
+        <script src="js/library/script-calendar.js"></script>
+        <!-- jquery migrate -->
+        <script src="js/library/jquery-migrate.min.js"></script>
+        <!-- slick -->
+        <script src="js/library/slick.min.js"></script>
+        <!-- main js -->
+        <script src="js/script.js"></script>
+    </footer>
+</body>
+
+</html>
