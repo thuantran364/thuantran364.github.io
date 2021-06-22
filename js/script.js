@@ -1,4 +1,8 @@
 (function ($) {
+  $(window).on("load", function () {
+    aos_init();
+  });
+
   $(".carousel").carousel({
     interval: 1000,
   });
@@ -12,10 +16,6 @@
       once: true,
     });
   }
-  $(window).on("load", function () {
-    aos_init();
-  });
-
   // scroll view center
   $(document).on(
     "click",
@@ -368,7 +368,127 @@
   $(".partner-list").slick({
     slidesToShow: 7,
     slidesToScroll: 3,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 1500,
+    autoplay: true,
+    arrows: true,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  });
+  $(".industrey-list").slick({
+    slidesToShow: 7,
+    slidesToScroll: 3,
+    autoplaySpeed: 1500,
+    autoplay: true,
+    arrows: true,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  });
+  $(".work-list").slick({
+    slidesToShow: 7,
+    slidesToScroll: 3,
+    autoplaySpeed: 1500,
+    autoplay: true,
+    arrows: true,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  });
+  $(".intergration-list").slick({
+    slidesToShow: 7,
+    slidesToScroll: 3,
+    autoplaySpeed: 1500,
     autoplay: true,
     arrows: true,
     pauseOnHover: false,
@@ -435,8 +555,79 @@
     $("#val").text(this.value.replace(/C:\\fakepath\\/i, ""));
   });
 
-  // calendar config
+  $('[data-toggle="collapse"]').on("click", function () {
+    $(".collapse.show").collapse("hide");
+    if ($(this).children(".img-detail-us").hasClass("active-show-info")) {
+      $(".img-detail-us").removeClass("active-show-info");
+    } else {
+      $(".img-detail-us").removeClass("active-show-info");
+      $(this).children(".img-detail-us").addClass("active-show-info");
+    }
+  });
 
+  // isotope
+  $(window).on("load", function () {
+    var thinkPiecesIsotope = $(".pieces-container").isotope({
+      itemSelector: ".box-pieces",
+      layoutMode: "fitRows",
+    });
+    $(".box-pieces-link .categories-pieces-link").on("click", function () {
+      $(".box-pieces-link .categories-pieces-link").removeClass(
+        "flters-active"
+      );
+      $(this).addClass("flters-active");
+      thinkPiecesIsotope.isotope({
+        filter: $(this).data("filter"),
+      });
+      aos_init();
+    });
+  });
+  // partners
+  $(window).on("load", function () {
+    var partnerIsotope = $(".list-partners-logo-info").isotope({
+      itemSelector: ".col-partners-list",
+      layoutMode: "fitRows",
+    });
+    $(".slide.slick-slide .partner-name").on("click", function () {
+      $(".slide.slick-slide .partner-name").removeClass("active-partner ");
+      $(this).addClass("active-partner ");
+      partnerIsotope.isotope({
+        filter: $(this).data("filter"),
+      });
+      aos_init();
+    });
+  });
+  // case studies
+  $(window).on("load", function () {
+    var partnerIsotope = $(".case-studies-content-box").isotope({
+      itemSelector: ".list-post-container",
+      layoutMode: "fitRows",
+    });
+    $(".slide.slick-slide .partner-name").on("click", function () {
+      $(".slide.slick-slide .partner-name").removeClass("active-partner ");
+      $(this).addClass("active-partner");
+      partnerIsotope.isotope({
+        filter: $(this).data("filter"),
+      });
+      aos_init();
+    });
+  });
+  // the team
+  $(window).on("load", function () {
+    var partnerIsotope = $(".box-info-the-team").isotope({
+      itemSelector: ".col-info-the-team",
+      layoutMode: "fitRows",
+    });
+    $(".list-title-team .title-team").on("click", function () {
+      $(".list-title-team .title-team").removeClass("active-the-team");
+      $(this).addClass("active-the-team");
+      partnerIsotope.isotope({
+        filter: $(this).data("filter"),
+      });
+      aos_init();
+    });
+  });
+  // calendar config
   // calendar libary
   mobiscroll.setOptions({
     locale: mobiscroll.localeEn, // Specify language like: locale: mobiscroll.localePl or omit setting to use default
