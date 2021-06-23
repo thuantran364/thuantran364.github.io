@@ -36,7 +36,8 @@ body {
   font-size: 26px;
 }
 
-.navbar-toggler.d-lg-none {
+.navbar-toggler {
+  border: 3px solid var(--redColor);
   background-color: var(--whiteColor);
 }
 .dropdown-item {
@@ -1010,6 +1011,9 @@ body {
 .title-page {
   margin-top: 30px;
 }
+.box-img-struted {
+  margin: auto;
+}
 .title-post:hover {
   background: -webkit-linear-gradient(var(--redColorLink), var(--yellowColor));
   -webkit-background-clip: text;
@@ -1138,7 +1142,9 @@ body {
 .link-content {
   margin: auto;
 }
-
+.case-studies-content-box-wwd {
+  border-bottom: 1px solid var(--redColorLink);
+}
 /* !what we do end*/
 /* !case studies */
 .case-studies-page {
@@ -1148,7 +1154,7 @@ body {
 .list-case-sdtudies {
   padding-bottom: 60px;
 }
-.case-studies-content-box {
+.box-case {
   padding: 40px 0;
 }
 .list-post-container {
@@ -1477,7 +1483,7 @@ body {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991.98px) {
   .icon-contact {
     font-size: 35px;
     width: 50px;
@@ -1496,8 +1502,44 @@ body {
   .title-dropdown {
     font-size: 22px;
   }
+  .btn-contact-us,
+  .btn-say-hello {
+    margin: auto;
+  }
+  .content-slide {
+    padding: 10px 0;
+    text-align: center;
+  }
+  .box-btn-work {
+    margin-top: 30px;
+  }
+  .top-who-page-content {
+    padding: 20px 0;
+  }
+  .slick-prev {
+    left: -10px;
+  }
+  .slick-next {
+    right: -15px;
+  }
+  .btn-all-partners,
+  .btn-all-client {
+    float: unset;
+  }
+  .slick-slider {
+    margin-bottom: 30px;
+  }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
+  .trusted-partners-about-us,
+  .clients {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+  .the-team,
+  .join-us {
+    padding: 30px 0;
+  }
   .title-menu {
     font-size: 20px;
   }
@@ -1514,12 +1556,59 @@ body {
   .navbar .dropdown .dropdown-menu {
     animation-name: slideToTop;
   }
-  /* ! who page */
   .top-who-page-content {
     padding: 20px 0;
   }
+  .content-about-us-page {
+    text-align: center;
+  }
+  .upload-form,
+  .input-email-form,
+  .btn-go-join-us {
+    margin-top: 15px;
+  }
+  .box-btn-ctrl {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .box-img-case {
+    display: none;
+  }
+  .box-img-struted {
+    display: none;
+  }
+  .content-trusted-partners {
+    width: auto;
+  }
+  .btn-content-trusted {
+    margin: 0;
+  }
+  .box-btn-control {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-wwd {
+    margin-top: 15px;
+  }
+  .box-img-wwd {
+    display: none;
+  }
+  .box-wwd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .img-box-case {
+    display: none;
+  }
+  .btn-work-with-us {
+    font-size: 20px;
+  }
+  .btn-go-join-us {
+    width: 100%;
+  }
 }
-
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .btn-checkout {
@@ -1702,6 +1791,16 @@ body {
   }
   .services-detail-box {
     padding: 10px 0;
+  }
+  .info-left,
+  .info-right {
+    text-align: center;
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0px;
   }
 }
 @media screen and (max-height: 400px) {

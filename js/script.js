@@ -354,13 +354,13 @@
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 520,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
     ],
@@ -397,12 +397,6 @@
           slidesToShow: 3,
         },
       },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
     ],
   });
   $(".industrey-list").slick({
@@ -435,12 +429,6 @@
         breakpoint: 576,
         settings: {
           slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 2,
         },
       },
     ],
@@ -477,12 +465,6 @@
           slidesToShow: 3,
         },
       },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
     ],
   });
   $(".intergration-list").slick({
@@ -517,16 +499,10 @@
           slidesToShow: 3,
         },
       },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
     ],
   });
   $(".partners-list-logo").slick({
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
@@ -535,15 +511,21 @@
     pauseOnHover: false,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 992,
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 520,
+        breakpoint: 768,
         settings: {
           slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
         },
       },
     ],
