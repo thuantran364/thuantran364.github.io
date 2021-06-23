@@ -952,6 +952,13 @@ body {
   padding: 10px;
   background-color: transparent;
 }
+.title-list-partner-client {
+  padding-top: 30px;
+  padding-bottom: 0;
+}
+.title-partners {
+  margin: auto;
+}
 .partners-content-box {
   background-color: var(--whiteColor);
   color: var(--blackColor);
@@ -1528,6 +1535,16 @@ body {
   }
   .slick-slider {
     margin-bottom: 30px;
+  }
+  .box-partners {
+    display: flex;
+  }
+  .col-partners-list {
+    display: unset;
+    height: auto;
+  }
+  .partner-client-name {
+    width: 100%;
   }
 }
 @media screen and (max-width: 767.98px) {

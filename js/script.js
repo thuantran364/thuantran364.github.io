@@ -594,6 +594,10 @@
       aos_init();
     });
   });
+
+
+
+
   // the team
   $(window).on("load", function () {
     var partnerIsotope = $(".box-info-the-team").isotope({
@@ -609,6 +613,9 @@
       aos_init();
     });
   });
+
+
+  
   // calendar config
   // calendar libary
   mobiscroll.setOptions({
