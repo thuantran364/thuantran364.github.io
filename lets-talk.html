@@ -24,6 +24,11 @@
 </head>
 
 <body>
+    <!-- library timeline fb -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0"
+        nonce="hjyDuGaC"></script>
+    <!-- library timeline fb end -->
     <!-- nav, top header -->
     <header class="top-header" id="top-header">
         <nav class="navbar navbar-expand-md fixed-top">
@@ -222,7 +227,7 @@
         <div class="container">
             <h1>Let's talk</h1>
             <div class="row">
-                <div class="col-lg-6 contact-us-info">
+                <div class="col-lg-6 col-md-6 contact-us-info">
                     <h3>level 5, 250 Queesn St Melbourne, Victoria 3000</h3>
                     <h3 class="contacts lets-talk-info">
                         Phone: <a href="tel:+61 3 9009 9601" class="contact-phone">+61 3 9009 9601</a>
@@ -231,10 +236,11 @@
                         Email: <a href="mailto:hello@butterfly.com.au" class="contact-mail">hello@butterfly.com.au</a>
                     </h3>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-md-6">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.0336649624583!2d144.95778841584482!3d-37.81268044175541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4ac0877051%3A0xbea2efc627d8db1d!2slevel%205%2F250%20Queen%20St%2C%20Melbourne%20VIC%203000%2C%20%C3%9Ac!5e0!3m2!1svi!2s!4v1623729551696!5m2!1svi!2s"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        width="550" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="iframe-map"></iframe>
                 </div>
             </div>
         </div>
@@ -268,16 +274,16 @@
                             <label for="idea" class="lbl-input-lets-talk">Any idead on timeline?</label>
                             <input type="text" id="idea" class="input-text">
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-8 col-sm-12">
                                     <div class="upload-form">
-                                        <h5>Upload relevant documents</h5>
+                                        <label for="file-custom">Upload relevant documents</label>
                                         <div class="input-file-custom">
-                                            <input type='file' class="custom-file-input">
-                                            <span id='val' class="value-file"></span>
+                                            <input type="file" class="custom-file-input" id="file-custom">
+                                            <span id="valueFile" class="value-file"></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 btn-box">
+                                <div class="col-lg-4 col-sm-12 btn-box">
                                     <button type="submit" class="btn-go-lets-talk">Go</button>
                                 </div>
                             </div>
@@ -337,11 +343,8 @@
                     </div>
                     <!-- plugin calendar end -->
                     <h1>Follow our socials</h1>
-                    <iframe
-                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2F20531316728%2Fposts%2F10154009990506729%2F&width=500&show_text=true&height=292&appId"
-                        width="500" height="292" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-                        allowfullscreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                    <div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="" data-show-text="true"><blockquote cite="https://www.facebook.com/20531316728/posts/10154009990506729/" class="fb-xfbml-parse-ignore">Người đăng: <a href="https://www.facebook.com/facebookapp/">Facebook App</a> vào&nbsp;<a href="https://www.facebook.com/20531316728/posts/10154009990506729/">Thứ Năm, 27 tháng 8, 2015</a></blockquote></div>
                 </div>
             </div>
         </div>

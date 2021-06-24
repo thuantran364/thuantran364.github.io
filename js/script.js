@@ -534,7 +534,7 @@
   // custom input file
 
   $("input[type='file']").change(function () {
-    $("#val").text(this.value.replace(/C:\\fakepath\\/i, ""));
+    $("#valueFile").text(this.value.replace(/C:\\fakepath\\/i, ""));
   });
 
   $('[data-toggle="collapse"]').on("click", function () {
@@ -595,27 +595,55 @@
     });
   });
 
-
-
-
   // the team
-  $(window).on("load", function () {
-    var partnerIsotope = $(".box-info-the-team").isotope({
-      itemSelector: ".col-info-the-team",
-      layoutMode: "fitRows",
-    });
-    $(".list-title-team .title-team").on("click", function () {
-      $(".list-title-team .title-team").removeClass("active-the-team");
-      $(this).addClass("active-the-team");
-      partnerIsotope.isotope({
-        filter: $(this).data("filter"),
-      });
-      aos_init();
-    });
+  // $(window).on("load", function () {
+  //   var partnerIsotope = $(".box-info-the-team").isotope({
+  //     itemSelector: ".col-info-the-team",
+  //     layoutMode: "fitRows",
+  //   });
+  //   $(".list-title-team .title-team").on("click", function () {
+  //     $(".list-title-team .title-team").removeClass("active-the-team");
+  //     $(this).addClass("active-the-team");
+  //     partnerIsotope.isotope({
+  //       filter: $(this).data("filter"),
+  //     });
+  //     aos_init();
+  //   });
+  // });
+
+  //open and close card when clicked on card
+  var $cell = $(".card");
+  //open and close card when clicked on card
+  $cell.find(".js-expander").click(function () {
+    var $thisCell = $(this).closest(".card");
+
+    if ($thisCell.hasClass("is-collapsed")) {
+      $cell
+        .not($thisCell)
+        .removeClass("is-expanded")
+        .addClass("is-collapsed");
+        // .addClass("is-inactive");
+      $thisCell.removeClass("is-collapsed").addClass("is-expanded");
+
+      // if ($cell.not($thisCell).hasClass("is-inactive")) {
+      //   //do nothing
+      // } else {
+      //   $cell.not($thisCell).addClass("is-inactive");
+      // }
+    } else {
+      $thisCell.removeClass("is-expanded").addClass("is-collapsed");
+      // $cell.not($thisCell).removeClass("is-inactive");
+    }
   });
 
+  //close card when click on cross
+  $cell.find(".js-collapser").click(function () {
+    var $thisCell = $(this).closest(".card");
 
-  
+    $thisCell.removeClass("is-expanded").addClass("is-collapsed");
+    $cell.not($thisCell).removeClass("is-inactive");
+  });
+
   // calendar config
   // calendar libary
   mobiscroll.setOptions({
