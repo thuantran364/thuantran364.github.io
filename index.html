@@ -27,197 +27,131 @@
 <body>
     <!-- nav, top header -->
     <header class="top-header" id="top-header">
-        <nav class="navbar navbar-expand-md fixed-top">
-            <div class="container">
-                <a class="navbar-brand logo" href="index.html"><img class="logo-icon" src="images/svg/logo.svg"
-                        alt=""></a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
+        <nav class="navbar-header">
+            <div class="wrapper container">
+                <div class="logo"><a href="index.html"><img class="logo-icon" src="images/svg/logo-white.svg" alt=""></a></div>
+                <button class="navbar-toggler d-md-none btn-show-menu" type="button">
+                    <i class="fas fa-bars menu-icon"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="whopage.html">WHY</a>
-                        </li>
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">WHO <i class="fas fa-caret-left icon-dropdown"></i></a>
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
-                                <div class="dropdown-items">
-                                    <h1 class="title-dropdown">Who do we work with?</h1>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="partners-page.html"
-                                                        class="title-dropdown-item">Clients</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="the-team-page.html"
-                                                        class="title-dropdown-item">The
-                                                        team</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="trusted-partners-page.html"
-                                                        class="title-dropdown-item">Preferred
-                                                        partners</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining our preferred partners
-                                                    over about two lines</p>
-                                            </div>
-                                        </div>
+                
+                <ul class="nav-links">
+                    <button class="navbar-toggler d-md-none btn-close-menu" type="button">
+                        <i class="fas fa-times close-icon"></i>
+                    </button>
+                    <li class="box-nav-link">
+                        <a class="link-item" href="whopage.html">WHY</a>
+                    </li>
+                    <li class="box-nav-link">
+                        <button class="link-item"  >WHO
+                            <i class="fas fa-caret-left icon-down"></i>
+                        </button>
+                        <div class="mega-box">
+                            <div class="content-nav">
+                                <h1 class="title-dropdown-menu">Who do we work with ?</h1>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="partners-page.html">Clients</a>
+                                        <p class="content-sub-dropdown">Lorem ipsum dolor sit amet consectetur </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="the-team-page.html">The Team</a>
+                                        <p class="content-sub-dropdown">Lorem ipsum dolor sit amet consectetur </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="trusted-partners-page.html">Preferred
+                                            partners</a>
+                                        <p class="content-sub-dropdown">Copy explaining our preferred partners over
+                                            about two lines</p>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">WHAT <i class="fas fa-caret-left icon-dropdown"></i></a>
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
-                                <div class="dropdown-items">
-                                    <h1 class="title-dropdown">What can we do together?</h1>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="what-we-do-page.html"
-                                                        class="title-dropdown-item">Discovery</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Design</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Development</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-                                        </div>
+                        </div>
+                    </li>
+                    <li class="box-nav-link">
+                        <button class="link-item">WHAT
+                            <i class="fas fa-caret-left icon-down"></i>
+                        </button>
+                        <div class="mega-box">
+                            <div class="content-nav">
+                                <h1 class="title-dropdown-menu">What can we do together?</h1>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="what-we-do-page.html">Discovery</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Suport</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Design</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Development</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
 
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Counslting</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="case-studies-page.html"
-                                                        class="title-dropdown-item">Case
-                                                        Studies</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Support</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Counslting</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="case-studies-page.html">Case Studies</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">HOW <i class="fas fa-caret-left icon-dropdown"></i></a>
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
-                                <div class="dropdown-items">
-                                    <h1 class="title-dropdown">How do we work?</h1>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="how-we-work-page.html"
-                                                        class="title-dropdown-item">Managing
-                                                        projects</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">Design
-                                                        practice</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Accessibility</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-
-                                        </div>
+                        </div>
+                    </li>
+                    <li class="box-nav-link">
+                        <button class="link-item" >HOW
+                            <i class="fas fa-caret-left icon-down"></i>
+                        </button>
+                        <div class="mega-box">
+                            <div class="content-nav">
+                                <h1 class="title-dropdown-menu">How do we work?</h1>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="how-we-work-page.html">Managing projects</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">How we
-                                                        use technology</a>
-                                                </h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Hosting</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">Quality
-                                                        Assurance</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Design practice</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Accessibility</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">How we use technology</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Hosting</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Quality Assurance</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="lets-talk.html">CONNECT</a>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
+                    </li>
+                    <li class="box-nav-link"><a class="link-item" href="lets-talk.html">CONNECT</a></li>
+                </ul>
             </div>
         </nav>
     </header>
+
+
+    
     <!-- banner -->
     <section class="banner" data-aos="fade-up">
 
@@ -248,7 +182,7 @@
                             <div class="content-carousel text-left item-center">
                                 <h1 class="banner-title">Turning ideas into experiences</h1>
                                 <p class="banner-content">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                <a href="#" class="under-line">transform</a>
+                                <a href="#" class="under-line">Transform</a>
                                 <p class="banner-content">Lorem ipsum dolor sit amet consectetur</p>
                             </div>
                         </div>
@@ -264,7 +198,7 @@
                                 <h1 class="banner-title">Turning ideas into experiences</h1>
                                 <p class="banner-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
                                 </p>
-                                <a href="#" class="under-line">transform</a>
+                                <a href="#" class="under-line">Transform</a>
                                 <p class="banner-content">Lorem ipsum dolor sit amet consectetur</p>
                             </div>
                         </div>

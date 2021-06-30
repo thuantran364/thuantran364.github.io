@@ -8,19 +8,21 @@
     <title>Document</title>
     <!-- bootstrap -->
     <link rel="stylesheet" href="css/library/bootstrap.min.css">
-    <!-- calender -->
-    <link rel="stylesheet" href="css/library/style.css">
-    <link rel="stylesheet" href="css/library/theme.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="font-awesome/css/all.min.css">
     <!-- aos -->
     <link rel="stylesheet" href="css/library/aos.css">
-    <link rel="stylesheet" href="css/calendar-library/mobiscroll.jquery.min.css">
     <!-- slick -->
     <link rel="stylesheet" href="css/library/slick-theme.css">
     <link rel="stylesheet" href="css/library/slick.css">
+    <!-- datepicker -->
+    <!-- <link rel="stylesheet" href="css/library/datepicker.min.css"> -->
+    <link rel="stylesheet" href="css/library/bootstrap-datetimepicker.min.css">
+    <!-- full calendar -->
+    <link rel="stylesheet" href="css/library/main.min.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -31,194 +33,127 @@
     <!-- library timeline fb end -->
     <!-- nav, top header -->
     <header class="top-header" id="top-header">
-        <nav class="navbar navbar-expand-md fixed-top">
-            <div class="container">
-                <a class="navbar-brand logo" href="index.html"><img class="logo-icon" src="images/svg/logo.svg"
-                        alt=""></a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
+        <nav class="navbar-header">
+            <div class="wrapper container">
+                <div class="logo"><a href="index.html"><img class="logo-icon" src="images/svg/logo-white.svg" alt=""></a></div>
+                <button class="navbar-toggler d-md-none btn-show-menu" type="button">
+                    <i class="fas fa-bars menu-icon"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="whopage.html">WHY</a>
-                        </li>
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">WHO <i class="fas fa-caret-left icon-dropdown"></i></a>
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
-                                <div class="dropdown-items">
-                                    <h1 class="title-dropdown">Who do we work with?</h1>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="partners-page.html"
-                                                        class="title-dropdown-item">Clients</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="the-team-page.html"
-                                                        class="title-dropdown-item">The
-                                                        team</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="trusted-partners-page.html"
-                                                        class="title-dropdown-item">Preferred
-                                                        partners</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining our preferred partners
-                                                    over about two lines</p>
-                                            </div>
-                                        </div>
+                
+                <ul class="nav-links">
+                    <button class="navbar-toggler d-md-none btn-close-menu" type="button">
+                        <i class="fas fa-times close-icon"></i>
+                    </button>
+                    <li class="box-nav-link">
+                        <a class="link-item" href="whopage.html">WHY</a>
+                    </li>
+                    <li class="box-nav-link">
+                        <a class="link-item" href="#" >WHO
+                            <i class="fas fa-caret-left icon-down"></i>
+                        </a>
+                        <div class="mega-box">
+                            <div class="content-nav">
+                                <h1 class="title-dropdown-menu">Who do we work with ?</h1>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="partners-page.html">Clients</a>
+                                        <p class="content-sub-dropdown">Lorem ipsum dolor sit amet consectetur </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="the-team-page.html">The Team</a>
+                                        <p class="content-sub-dropdown">Lorem ipsum dolor sit amet consectetur </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="trusted-partners-page.html">Preferred
+                                            partners</a>
+                                        <p class="content-sub-dropdown">Copy explaining our preferred partners over
+                                            about two lines</p>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">WHAT <i class="fas fa-caret-left icon-dropdown"></i></a>
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
-                                <div class="dropdown-items">
-                                    <h1 class="title-dropdown">What can we do together?</h1>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="what-we-do-page.html"
-                                                        class="title-dropdown-item">Discovery</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Design</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Development</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-                                        </div>
+                        </div>
+                    </li>
+                    <li class="box-nav-link">
+                        <a class="link-item" href="#" >WHAT
+                            <i class="fas fa-caret-left icon-down"></i>
+                        </a>
+                        <div class="mega-box">
+                            <div class="content-nav">
+                                <h1 class="title-dropdown-menu">What can we do together?</h1>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="what-we-do-page.html">Discovery</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Suport</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Design</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Development</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
 
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Counslting</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="case-studies-page.html"
-                                                        class="title-dropdown-item">Case
-                                                        Studies</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Support</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Counslting</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="case-studies-page.html">Case Studies</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">HOW <i class="fas fa-caret-left icon-dropdown"></i></a>
-                            <div class="dropdown-menu w-100" aria-labelledby="dropdownId">
-                                <div class="dropdown-items">
-                                    <h1 class="title-dropdown">How do we work?</h1>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="how-we-work-page.html"
-                                                        class="title-dropdown-item">Managing
-                                                        projects</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">Design
-                                                        practice</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Accessibility</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-
-                                        </div>
+                        </div>
+                    </li>
+                    <li class="box-nav-link">
+                        <a class="link-item" href="#" >HOW
+                            <i class="fas fa-caret-left icon-down"></i>
+                        </a>
+                        <div class="mega-box">
+                            <div class="content-nav">
+                                <h1 class="title-dropdown-menu">How do we work?</h1>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="how-we-work-page.html">Managing projects</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
-                                    <div class="row row-nav-full">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">How we
-                                                        use technology</a>
-                                                </h3>
-                                                <p class="subtitle-dropdown-item">Copy about our cilents over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#"
-                                                        class="title-dropdown-item">Hosting</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy about the team over about two
-                                                    lines</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="item-dropdown">
-                                                <h3 class="title-menu"><a href="#" class="title-dropdown-item">Quality
-                                                        Assurance</a></h3>
-                                                <p class="subtitle-dropdown-item">Copy explaining what we develop over
-                                                    about two lines</p>
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Design practice</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Accessibility</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">How we use technology</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Hosting</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 box-content-dropdown">
+                                        <a class="nav-link-item" href="#">Quality Assurance</a>
+                                        <p class="content-sub-dropdown">Copy about our cilents over about two lines</p>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="lets-talk.html">CONNECT</a>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
+                    </li>
+                    <li class="box-nav-link"><a class="link-item" href="lets-talk.html">CONNECT</a></li>
+                </ul>
+
+
             </div>
         </nav>
     </header>
@@ -294,57 +229,96 @@
                     <h1>Book a metting</h1>
                     <p>got a project you have in mind? Start a brief with us</p>
                     <!-- plugin calendar -->
-                    <div mbsc-page class="demo-create-read-update-delete-CRUD">
-                        <div>
-                            <div id="demo-add-delete-event"></div>
-
-                            <div id="demo-add-popup">
-                                <div class="mbsc-form-group">
-                                    <label>
-                                        Title
-                                        <input mbsc-input id="event-title">
-                                    </label>
-                                    <label>
-                                        Description
-                                        <textarea mbsc-textarea id="event-desc"></textarea>
-                                    </label>
-                                </div>
-                                <div class="mbsc-form-group">
-                                    <label for="event-all-day">
-                                        All-day
-                                        <input mbsc-switch id="event-all-day" type="checkbox" />
-                                    </label>
-                                    <label for="start-input">
-                                        Starts
-                                        <input mbsc-input id="start-input" />
-                                    </label>
-                                    <label for="end-input">
-                                        Ends
-                                        <input mbsc-input id="end-input" />
-                                    </label>
-                                    <div id="event-date"></div>
-                                    <label>
-                                        Show as busy
-                                        <input id="event-status-busy" mbsc-segmented type="radio" name="event-status"
-                                            value="busy">
-                                    </label>
-                                    <label>
-                                        Show as free
-                                        <input id="event-status-free" mbsc-segmented type="radio" name="event-status"
-                                            value="free">
-                                    </label>
-                                    <div class="mbsc-button-group">
-                                        <button class="mbsc-button-block" id="event-delete" mbsc-button
-                                            data-color="danger" data-variant="outline">Delete event</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="calendar"></div>
+                    <!-- calendar modal -->
                     <!-- plugin calendar end -->
                     <h1>Follow our socials</h1>
 
-                    <div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="" data-show-text="true"><blockquote cite="https://www.facebook.com/20531316728/posts/10154009990506729/" class="fb-xfbml-parse-ignore">Người đăng: <a href="https://www.facebook.com/facebookapp/">Facebook App</a> vào&nbsp;<a href="https://www.facebook.com/20531316728/posts/10154009990506729/">Thứ Năm, 27 tháng 8, 2015</a></blockquote></div>
+                    <div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/"
+                        data-width="" data-show-text="true">
+                        <blockquote cite="https://www.facebook.com/20531316728/posts/10154009990506729/"
+                            class="fb-xfbml-parse-ignore">Người đăng: <a
+                                href="https://www.facebook.com/facebookapp/">Facebook App</a> vào&nbsp;<a
+                                href="https://www.facebook.com/20531316728/posts/10154009990506729/">Thứ Năm, 27 tháng
+                                8, 2015</a></blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><span id="eventTitle"></span></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <button id="btnDelete" class="btn btn-danger btn-sm pull-right">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                        <button id="btnEdit" class="btn btn-warning btn-sm pull-right" style="margin-right:5px;">
+                            <i class="far fa-edit"></i>Edit
+                        </button>
+                        <p id="pDetails"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModalSave" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Save Event</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="POST" class="form-horizontal">
+                            <input type="hidden" id="hdEventID" value="0" />
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" id="txtSubject" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="chkIsFullDay" checked="checked" /> Full day event ?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divStartDate">
+                                <label>Start</label>
+                                <div class="input-group date" id="datetimepickerStart">
+                                    <input type="text" id="txtStart" class="form-control" />
+                                    <div class="input-group-addon input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-calendar"
+                                                aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="divEndDate" style="display:none">
+                                <label>End</label>
+                                <div class="input-group date" id="datetimepickerEnd">
+                                    <input type="text" id="txtEnd" class="form-control" />
+                                    <div class="input-group-addon input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-calendar"
+                                                aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea id="txtDescription" rows="3" class="form-control"></textarea>
+                            </div>
+
+                            <button type="submit" id="btnSave" class="btn btn-success">Save</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -432,25 +406,27 @@
         </section>
         <!-- jquery -->
         <script src="js/library/jquery.min.js"></script>
-        <!-- calendar -->
-        <script src="js/library/calendar.min.js"></script>
-        <!-- jquery UI -->
-        <script src="js/library/jquery-ui.js"></script>
         <!-- Bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="js/library/bootstrap.min.js"></script>
         <!-- jquery-easing -->
         <script src="js/library/jquery.easing.min.js"></script>
         <!-- aos -->
         <script src="js/library/aos.js"></script>
-        <!-- calendar library -->
-        <script src="js/calendar-library/mobiscroll.jquery.min.js"></script>
-        <script src="js/library/script-calendar.js"></script>
         <!-- jquery migrate -->
         <script src="js/library/jquery-migrate.min.js"></script>
         <!-- slick -->
         <script src="js/library/slick.min.js"></script>
         <!-- isotope -->
         <script src="js/library/isotope.pkgd.min.js"></script>
+        <!-- moment -->
+        <script src="js/library/moment.min.js"></script>
+        <!-- datepicker -->
+        <!-- <script src="js/library/datepicker.min.js"></script>
+        <script src="js/library/datepicker.en.js"></script> -->
+        <script src="js/library/bootstrap-datetimepicker.min.js"></script>
+        <!-- full calendar -->
+        <script src="js/library/main.min.js"></script>
         <!-- main js -->
         <script src="js/script.js"></script>
     </footer>

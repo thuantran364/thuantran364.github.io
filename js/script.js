@@ -16,298 +16,246 @@
       once: true,
     });
   }
+
   // scroll view center
-  $(document).on(
-    "click",
-    ".navbar-brand, .nav-link, .dropdown-item, .btn-down",
-    function () {
-      var scrollView = $("#top-header").outerHeight() + 60;
-      var locate = $(this.hash);
-      if (locate.length) {
-        var scrollto = locate.offset().top - scrollView;
-        $("html, body").animate(
-          {
-            scrollTop: scrollto,
-          },
-          500,
-          "easeInQuad"
-        );
-        return false;
-      }
-    }
-  );
+  // $(document).on(
+  //   "click",
+  //   ".navbar-brand, .nav-link, .dropdown-item, .btn-down",
+  //   function () {
+  //     var scrollView = $("#top-header").outerHeight() + 60;
+  //     var locate = $(this.hash);
+  //     if (locate.length) {
+  //       var scrollto = locate.offset().top - scrollView;
+  //       $("html, body").animate(
+  //         {
+  //           scrollTop: scrollto,
+  //         },
+  //         500,
+  //         "easeInQuad"
+  //       );
+  //       return false;
+  //     }
+  //   }
+  // );
 
   // hide nav
   var scrollNav = 0;
   $(window).scroll(function () {
     var scrollToHide = $(window).scrollTop();
-    $(".navbar").toggleClass("hidden", scrollToHide > scrollNav);
+    $(".navbar-header").toggleClass("hiden", scrollToHide > scrollNav);
     scrollNav = scrollToHide;
+    $(".wrapper").children(".nav-links").removeClass("show-menu-left");
+    $(".link-item").removeClass("active-nav");
+    $(".mega-box").removeClass("show-drop-down");
+    $(".icon-down").removeClass("rotate-icon");
   });
-  // hover
+  // disable href # dropdown
+
+  // click dropdown menu
+  $(".btn-show-menu").on("click", function () {
+    $(".wrapper").children(".nav-links").addClass("show-menu-left");
+  });
+  $(".btn-close-menu").on("click", function () {
+    $(".wrapper").children(".nav-links").removeClass("show-menu-left");
+    $(".wrapper")
+      .children(".nav-links")
+      .children(".box-nav-link")
+      .children(".mega-box")
+      .removeClass("show-drop-down");
+    $(".wrapper")
+      .children(".nav-links")
+      .children(".box-nav-link")
+      .children(".link-item")
+      .children(".icon-down")
+      .removeClass("rotate-icon");
+  });
+  // check size screen
   if ($(window).width() > 750) {
-    $(".title-menu").hover(
-      function () {
-        $(this).children(".title-dropdown-item").css({
-          cssText: "color: #e02e5b !important; background-color: transparent;",
+    $(window).scroll(function () {
+      var initialSrc = "images/svg/logo.svg";
+      var scrollSrc = "images/svg/logo-white.svg";
+      if ($(this).scrollTop() > 10) {
+        $(".wrapper").children(".nav-links").removeClass("show-menu-left");
+        $(".logo-icon").attr("src", scrollSrc);
+        $(".navbar-header").css({
+          cssText: "background-color: var(--redColor)",
         });
-      },
-      function () {
-        $(this).children(".title-dropdown-item").css({
-          cssText: "color: #000 !important; background-color: transparent;",
-        });
+        $(".link-item").css({ cssText: "color: var(--whiteColor)" });
+        $(".menu-icon").css({cssText:"color: var(--whiteColor)"});
+        $(".btn-show-menu").css({cssText:"border: 3px solid var(--whiteColor)"});
+      } else {
+        $(".logo-icon").attr("src", initialSrc);
+        $(".navbar-header").css({ cssText: "background-color: transparent" });
+        $(".link-item").css({ cssText: "color: var(--blackColor)" });
+        $(".menu-icon").css({cssText:"color: var(--redColor)"});
+        $(".btn-show-menu").css({cssText:"border: 3px solid var(--redColor)"});
       }
-    );
-    $(".navbar .dropdown").hover(
-      function () {
-        $(this).find(".dropdown-menu").stop(true, true).delay(10).fadeIn(10);
-      },
-      function () {
-        $(this).find(".dropdown-menu").stop(true, true).delay(150).fadeOut(50);
-      }
-    );
-    $(".title-dropdown-item").css({ cssText: " color: #27282e" });
-    $(".navbar .dropdown .dropdown-menu").css({
-      cssText: "background-color: #f4f4f4",
     });
+    $(".box-nav-link").hover(
+      function () {
+        $(this)
+          .children(".link-item")
+          .children(".icon-down")
+          .addClass("rotate-icon");
+      },
+      function () {
+        $(this)
+          .children(".link-item")
+          .children(".icon-down")
+          .removeClass("rotate-icon");
+      }
+    );
   }
   if ($(window).width() < 768) {
-    $(".navbar .dropdown")
-      .find(".dropdown-menu")
+    $(".navbar-header")
+      .find(".box-nav-link")
       .unbind("mouseenter")
       .unbind("mouseleave");
-    $(".navbar .dropdown .dropdown-menu").css({
-      cssText: "background-color: #c03",
+    $(".box-nav-link").on("click", function () {
+      if ($(this).children(".mega-box").hasClass("show-drop-down")) {
+        $(".mega-box").removeClass("show-drop-down");
+      } else {
+        $(".mega-box").removeClass("show-drop-down");
+
+        $(this).children(".mega-box").addClass("show-drop-down");
+      }
+
+      if ($(this).children(".link-item").hasClass("active-nav")) {
+        $(".link-item").removeClass("active-nav");
+      } else {
+        $(".link-item").removeClass("active-nav");
+        $(this).children(".link-item").addClass("active-nav");
+      }
+      if (
+        $(this)
+          .children(".link-item")
+          .children(".icon-down")
+          .hasClass("rotate-icon")
+      ) {
+        $(".icon-down").removeClass("rotate-icon");
+      } else {
+        $(".icon-down").removeClass("rotate-icon");
+        $(this)
+          .children(".link-item")
+          .children(".icon-down")
+          .addClass("rotate-icon");
+      }
     });
-    $(".title-dropdown-item").css({ cssText: " color: #fff" });
-    $(".nav-item").click(function () {
-      $(this)
-        .children(".nav-link")
-        .children(".fa-caret-left")
-        .attr("class", "fas fa-chevron-down icon-dropdown");
+    $(document).mouseup(function (e) {
+      if (
+        !$(".nav-links").is(e.target) && // The target of the click isn't the container.
+        $(".nav-links").has(e.target).length === 0
+      ) {
+        // Nor a child element of the container
+        $(".nav-links").removeClass("show-menu-left");
+      }
     });
   }
-  $(".nav-item").hover(
-    function () {
-      $(this)
-        .children(".nav-link")
-        .children(".fa-caret-left")
-        .css({ cssText: "transform: rotate(-90deg);" });
-    },
-    function () {
-      $(this)
-        .children(".nav-link")
-        .children(".fa-caret-left")
-        .css({ cssText: "transform: rotate(0);" });
-    }
-  );
+
   // resize
   $(window).resize(function () {
     let width = $(window).width();
     if (width > 750) {
-      $(".nav-item").hover(
-        function () {
-          $(this)
-            .children(".nav-link")
-            .children(".fa-caret-left")
-            .css({ cssText: "transform: rotate(-90deg);" });
-        },
-        function () {
-          $(this)
-            .children(".nav-link")
-            .children(".fa-caret-left")
-            .css({ cssText: "transform: rotate(0);" });
-        }
-      );
-      $(".title-menu").hover(
-        function () {
-          $(this).children(".title-dropdown-item").css({
-            cssText:
-              "color: #e02e5b !important; background-color: transparent;",
+      $(window).scroll(function () {
+        var initialSrc = "images/svg/logo.svg";
+        var scrollSrc = "images/svg/logo-white.svg";
+        if ($(this).scrollTop() > 10) {
+          $(".wrapper").children(".nav-links").removeClass("show-menu-left");
+          $(".logo-icon").attr("src", scrollSrc);
+          $(".navbar-header").css({
+            cssText: "background-color: var(--redColor)",
           });
-        },
-        function () {
-          $(this).children(".title-dropdown-item").css({
-            cssText: "color: #000 !important; background-color: transparent;",
-          });
+          $(".link-item").css({ cssText: "color: var(--whiteColor)" });
+          $(".menu-icon").css({cssText:"color: var(--whiteColor)"});
+          $(".btn-show-menu").css({cssText:"border: 3px solid var(--whiteColor)"});
+        } else {
+          $(".logo-icon").attr("src", initialSrc);
+          $(".navbar-header").css({ cssText: "background-color: transparent" });
+          $(".link-item").css({ cssText: "color: var(--blackColor)" });
+          $(".menu-icon").css({cssText:"color: var(--redColor)"});
+          $(".btn-show-menu").css({cssText:"border: 3px solid var(--redColor)"});
         }
-      );
-      $(".title-dropdown-item ").css({
-        cssText: "color: #000;",
       });
-      // $(".nav-item").hover(
-      //   function () {
-      //     $(this).css("background-color", "#27282e");
-      //   },
-      //   function () {
-      //     $(this).css("background-color", "transparent");
-      //   }
-      // );
-      $(".navbar .dropdown").hover(
+      $(".box-nav-link").hover(
         function () {
-          $(this).find(".dropdown-menu").stop(true, true).delay(10).fadeIn(10);
+          $(this)
+            .children(".link-item")
+            .children(".icon-down")
+            .addClass("rotate-icon");
         },
         function () {
           $(this)
-            .find(".dropdown-menu")
-            .stop(true, true)
-            .delay(150)
-            .fadeOut(50);
+            .children(".link-item")
+            .children(".icon-down")
+            .removeClass("rotate-icon");
         }
       );
-      $(".navbar .dropdown .dropdown-menu").css({
-        cssText: "background-color: #f4f4f4;",
-      });
-      $(
-        ".navbar-collapse.collapse.show > .navbar-nav > .nav-item > .nav-link"
-      ).css({ cssText: "color: red !important" });
-
-      if ($(this).scrollTop() > 30) {
-        $(".navbar-collapse.collapse")
-          .css("background-color", "transparent")
-          .collapse("hide")
-          .children(".navbar-nav")
-          .children(".nav-item")
-          .children(".nav-link")
-          .css({ cssText: "color: #fff !important" });
-      } else {
-        $(".navbar-collapse.collapse")
-          .css("background-color", "transparent")
-          .collapse("hide")
-          .children(".navbar-nav")
-          .children(".nav-item")
-          .children(".nav-link")
-          .css({ cssText: "color: #000 !important" });
-      }
     } else if (width < 768) {
-      $(".nav-item").hover(
-        function () {
-          $(this)
-            .children(".nav-link")
-            .children(".fa-caret-left")
-            .css({ cssText: "transform: rotate(-90deg);" });
-        },
-        function () {
-          $(this)
-            .children(".nav-link")
-            .children(".fa-caret-left")
-            .css({ cssText: "transform: rotate(0);" });
+      $(".wrapper").children(".nav-links").removeClass("show-menu-left");
+      $(".link-item").removeClass("active-nav");
+      $(".mega-box").removeClass("show-drop-down");
+      $(".icon-down").removeClass("rotate-icon");
+      $(".box-nav-link").on("click", function () {
+        $(window).scroll(function () {
+          var initialSrc = "images/svg/logo.svg";
+          var scrollSrc = "images/svg/logo-white.svg";
+          if ($(this).scrollTop() > 10) {
+            $(".logo-icon").attr("src", scrollSrc);
+          } else {
+            $(".logo-icon").attr("src", initialSrc);
+          }
+        });
+        if ($(this).children(".mega-box").hasClass("show-drop-down")) {
+          $(".mega-box").removeClass("show-drop-down");
+        } else {
+          $(".mega-box").removeClass("show-drop-down");
+
+          $(this).children(".mega-box").addClass("show-drop-down");
         }
-      );
-      $(".navbar .dropdown").unbind("mouseenter").unbind("mouseleave");
-      $(".title-menu").hover(
-        function () {
-          $(this).children(".title-dropdown-item").css({
-            cssText: "color: #fff !important; background-color: transparent;",
-          });
-        },
-        function () {
-          $(this).children(".title-dropdown-item").css({
-            cssText: "color: #fff !important; background-color: transparent; ",
-          });
+
+        if ($(this).children(".link-item").hasClass("active-nav")) {
+          $(".link-item").removeClass("active-nav");
+        } else {
+          $(".link-item").removeClass("active-nav");
+
+          $(this).children(".link-item").addClass("active-nav");
         }
-      );
-      $(".navbar .dropdown .dropdown-menu").css({
-        cssText: "background-color: #c03;",
+        if (
+          $(this)
+            .children(".link-item")
+            .children(".icon-down")
+            .hasClass("rotate-icon")
+        ) {
+          $(".icon-down").removeClass("rotate-icon");
+        } else {
+          $(".icon-down").removeClass("rotate-icon");
+          $(this)
+            .children(".link-item")
+            .children(".icon-down")
+            .addClass("rotate-icon");
+        }
       });
-      $(".title-dropdown-item ").css({
-        cssText: "color: #fff;",
+      $(document).mouseup(function (e) {
+        if (
+          !$(".nav-links").is(e.target) && // The target of the click isn't the container.
+          $(".nav-links").has(e.target).length === 0
+        ) {
+          // Nor a child element of the container
+          $(".nav-links").removeClass("show-menu-left");
+        }
       });
-      // $(".nav-item").hover(
-      //   function () {
-      //     $(this).css("background-color", "#c03");
-      //   },
-      //   function () {
-      //     $(this).css("background-color", "transparent");
-      //   }
-      // );
-      $(".navbar-collapse.collapse")
-        .css("background-color", "#c03")
-        .collapse("hide")
-        .children(".navbar-nav")
-        .children(".nav-item")
-        .children(".nav-link")
-        .css({ cssText: "color: #fff !important" });
-      $(".navbar .dropdown")
-        .find(".dropdown-menu")
+      $(".navbar-header")
+        .find(".box-nav-link")
         .unbind("mouseenter")
         .unbind("mouseleave");
     }
   });
   // back to top
   $(window).scroll(function () {
-    var initialSrc = "images/svg/logo.svg";
-    var scrollSrc = "images/svg/logo-white.svg";
     if ($(this).scrollTop() > 10) {
-      $(".logo-icon").attr("src", scrollSrc);
       $(".back-to-top").fadeIn("slow");
-      $(".navbar").css("background-color", "#c03");
-      $(".navbar-collapse.collapse.show").css("background-color", "#c03");
-      $(".navbar-collapse.collapse")
-        .collapse("hide")
-        .children(".navbar-nav")
-        .children(".nav-item")
-        .children(".nav-link")
-        .css({ cssText: "color: #fff !important" });
-      // $(".nav-item").hover(
-      //   function () {
-      //     $(this).css("background-color", "#fff");
-      //     $(this)
-      //       .children(".nav-link")
-      //       .css({ cssText: "color: #000 !important" });
-      //   },
-      //   function () {
-      //     $(this).css("background-color", "transparent");
-      //     $(this)
-      //       .children(".nav-link")
-      //       .css({ cssText: "color: #fff !important" });
-      //   }
-      // );
     } else {
-      $(".logo-icon").attr("src", initialSrc);
       $(".back-to-top").fadeOut("slow");
-      $(".navbar").css("background-color", "transparent");
-      // $(".dropdown-items,.dropdown-menu").css("background-color", "#f4f4f4");
-
-      $(".navbar-collapse.collapse.show").css("background-color", "#c03");
-
-      if ($(window).width() > 750) {
-        $(".navbar-collapse.collapse")
-          .collapse("hide")
-          .children(".navbar-nav")
-          .children(".nav-item")
-          .children(".nav-link")
-          .css({ cssText: "color: #000 !important" });
-      } else if ($(window).width() < 768) {
-        $(".navbar-collapse.collapse")
-          .collapse("hide")
-          .children(".navbar-nav")
-          .children(".nav-item")
-          .children(".nav-link")
-          .css({ cssText: "color: #fff !important" });
-      }
-
-      // $(".nav-item").hover(
-      //   function () {
-      //     $(this).css("background-color", "#f4f4f4");
-      //     $(this)
-      //       .children(".nav-link")
-      //       .css({ cssText: "color: #000 !important" });
-      //   },
-      //   function () {
-      //     $(this).css("background-color", "transparent");
-      //     if ($(window).width() > 750) {
-      //       $(this)
-      //         .children(".nav-link")
-      //         .css({ cssText: "color: #000 !important" });
-      //     }
-      //     if ($(window).width() < 765) {
-      //       $(this)
-      //         .children(".nav-link")
-      //         .css({ cssText: "color: #fff !important" });
-      //     }
-      //   }
-      // );
     }
   });
   // faq template
@@ -397,6 +345,13 @@
           slidesToShow: 3,
         },
       },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   });
   $(".industrey-list").slick({
@@ -429,6 +384,13 @@
         breakpoint: 576,
         settings: {
           slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -465,6 +427,13 @@
           slidesToShow: 3,
         },
       },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   });
   $(".intergration-list").slick({
@@ -499,6 +468,13 @@
           slidesToShow: 3,
         },
       },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   });
   $(".partners-list-logo").slick({
@@ -526,6 +502,47 @@
         breakpoint: 576,
         settings: {
           slidesToShow: 2,
+        },
+      },
+    ],
+  });
+  $(".list-title-team").slick({
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    arrows: true,
+    dots: false,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 340,
+        settings: {
+          slidesToShow: 1,
         },
       },
     ],
@@ -595,19 +612,22 @@
     });
   });
 
-  // the team
+  // // the team
   // $(window).on("load", function () {
-  //   var partnerIsotope = $(".box-info-the-team").isotope({
-  //     itemSelector: ".col-info-the-team",
-  //     layoutMode: "fitRows",
+  //   var theTeamIsotope = $(".box-card-container").isotope({
+  //     itemSelector: ".is-collapsed",
   //   });
   //   $(".list-title-team .title-team").on("click", function () {
   //     $(".list-title-team .title-team").removeClass("active-the-team");
   //     $(this).addClass("active-the-team");
-  //     partnerIsotope.isotope({
+  //     theTeamIsotope.isotope({
   //       filter: $(this).data("filter"),
   //     });
   //     aos_init();
+  //   });
+
+  //   $(".collapse").on("collapsing", function () {
+  //     theTeamIsotope.isotope("layout");
   //   });
   // });
 
@@ -618,11 +638,8 @@
     var $thisCell = $(this).closest(".card");
 
     if ($thisCell.hasClass("is-collapsed")) {
-      $cell
-        .not($thisCell)
-        .removeClass("is-expanded")
-        .addClass("is-collapsed");
-        // .addClass("is-inactive");
+      $cell.not($thisCell).removeClass("is-expanded").addClass("is-collapsed");
+      // .addClass("is-inactive");
       $thisCell.removeClass("is-collapsed").addClass("is-expanded");
 
       // if ($cell.not($thisCell).hasClass("is-inactive")) {
@@ -644,294 +661,114 @@
     $cell.not($thisCell).removeClass("is-inactive");
   });
 
-  // calendar config
-  // calendar libary
-  mobiscroll.setOptions({
-    locale: mobiscroll.localeEn, // Specify language like: locale: mobiscroll.localePl or omit setting to use default
-    theme: "auto", // Specify theme like: theme: 'ios' or omit setting to use default
-    themeVariant: "light", // More info about themeVariant: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-themeVariant
+  document.addEventListener("DOMContentLoaded", function () {
+    var calendarEl = document.getElementById("calendar");
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      themeSystem: "bootstrap",
+      initialView: "dayGridMonth",
+      timeFormat: "h(:mm)a",
+      header: {
+        left: "prev,next today",
+        center: "title",
+        right: "month,basicWeek,basicDay,agenda",
+      },
+      eventLimit: true,
+      events: [
+        {
+          title: "Something",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu pellentesque nibh. In nisl nulla, convallis ac nulla eget, pellentesque pellentesque magna.",
+          start: "2021-06-12T10:30:00",
+          end: "2021-06-15T10:30:00",
+        },
+      ],
+      eventClick: function (info, jsEvent, view) {
+        selectedEvent = info;
+        $("#myModal #eventTitle").text(info.event.title);
+        var $description = $("<div/>");
+        $description.append(
+          $("<p/>").html(
+            "<b>Start:</b>" + info.event.start.startformat("DD/MM/YYYY HH:mm A")
+          )
+        );
+        if (info.end != null) {
+          $description.append(
+            $("<p/>").html(
+              "<b>End:</b>" + info.event.end.format("DD/MM/YYYY HH:mm A")
+            )
+          );
+        }
+        $description.append(
+          $("<p/>").html("<b>Description:</b>" + info.event.description)
+        );
+        $("#myModal #pDetails").empty().html($description);
+
+        $("#myModal").modal();
+      },
+      selectable: true,
+      select: function (start, end) {
+        selectedEvent = {
+          eventID: 0,
+          title: "",
+          description: "",
+          start: start,
+          end: end,
+          allDay: false,
+        };
+        openAddEditForm();
+      },
+      editable: true,
+    });
+    calendar.render();
   });
 
-  $(function () {
-    var oldEvent,
-      tempEvent = {},
-      deleteEvent,
-      restoreEvent,
-      $title = $("#event-title"),
-      $description = $("#event-desc"),
-      $allDay = $("#event-all-day"),
-      $statusFree = $("#event-status-free"),
-      $statusBusy = $("#event-status-busy"),
-      $deleteButton = $("#event-delete"),
-      datePickerResponsive = {
-        medium: {
-          controls: ["calendar"],
-          touchUi: false,
-        },
-      },
-      datetimePickerResponsive = {
-        medium: {
-          controls: ["calendar", "time"],
-          touchUi: false,
-        },
-      },
-      now = new Date(),
-      myData = [{}];
-
-    function createAddPopup(elm) {
-      // hide delete button inside add popup
-      $deleteButton.hide();
-
-      deleteEvent = true;
-      restoreEvent = false;
-
-      // set popup header text and buttons for adding
-      popup.setOptions({
-        headerText: "New event", // More info about headerText: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-headerText
-        buttons: [
-          "cancel",
-          {
-            // More info about buttons: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-buttons
-            text: "Add",
-            keyCode: "enter",
-            handler: function () {
-              calendar.updateEvent({
-                id: tempEvent.id,
-                title: tempEvent.title,
-                description: tempEvent.description,
-                allDay: tempEvent.allDay,
-                start: tempEvent.start,
-                end: tempEvent.end,
-                color: tempEvent.color,
-              });
-
-              // navigate the calendar to the correct view
-              calendar.navigate(tempEvent.start);
-
-              deleteEvent = false;
-              popup.close();
-            },
-            cssClass: "mbsc-popup-button-primary",
-          },
-        ],
-      });
-
-      // fill popup with a new event data
-      $title.mobiscroll("getInst").value = tempEvent.title;
-      $description.mobiscroll("getInst").value = "";
-      $allDay.mobiscroll("getInst").checked = true;
-      range.setVal([tempEvent.start, tempEvent.end]);
-      $statusBusy.mobiscroll("getInst").checked = true;
-      range.setOptions({
-        controls: ["date"],
-        responsive: datePickerResponsive,
-      });
-
-      // set anchor for the popup
-      popup.setOptions({ anchor: elm });
-
-      popup.open();
-    }
-
-    function createEditPopup(args) {
-      var ev = args.event;
-      // show delete button inside edit popup
-      $deleteButton.show();
-
-      deleteEvent = false;
-      restoreEvent = true;
-
-      // set popup header text and buttons for editing
-      popup.setOptions({
-        headerText: "Edit event", // More info about headerText: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-headerText
-        buttons: [
-          "cancel",
-          {
-            // More info about buttons: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-buttons
-            text: "Save",
-            keyCode: "enter",
-            handler: function () {
-              var date = range.getVal();
-
-              // update event with the new properties on save button click
-              calendar.updateEvent({
-                id: ev.id,
-                title: $title.val(),
-                description: $description.val(),
-                allDay: $allDay.mobiscroll("getInst").checked,
-                start: date[0],
-                end: date[1],
-                free: $statusFree.mobiscroll("getInst").checked,
-                color: ev.color,
-              });
-
-              // navigate the calendar to the correct view
-              calendar.navigate(date[0]);
-
-              restoreEvent = false;
-              popup.close();
-            },
-            cssClass: "mbsc-popup-button-primary",
-          },
-        ],
-      });
-
-      // fill popup with the selected event data
-      $title.mobiscroll("getInst").value = ev.title || "";
-      $description.mobiscroll("getInst").value = ev.description || "";
-      $allDay.mobiscroll("getInst").checked = ev.allDay || false;
-      range.setVal([ev.start, ev.end]);
-
-      if (ev.free) {
-        $statusFree.mobiscroll("getInst").checked = true;
-      } else {
-        $statusBusy.mobiscroll("getInst").checked = true;
-      }
-
-      // change range settings based on the allDay
-      range.setOptions({
-        controls: ev.allDay ? ["date"] : ["datetime"],
-        responsive: ev.allDay ? datePickerResponsive : datetimePickerResponsive,
-      });
-
-      // set anchor for the popup
-      popup.setOptions({ anchor: args.domEvent.currentTarget });
-      popup.open();
-    }
-
-    var calendar = $("#demo-add-delete-event")
-      .mobiscroll()
-      .eventcalendar({
-        clickToCreate: "double", // More info about clickToCreate: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-clickToCreate
-        dragToCreate: true, // More info about dragToCreate: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-dragToCreate
-        dragToMove: true, // More info about dragToMove: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-dragToMove
-        dragToResize: true, // More info about dragToResize: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-dragToResize
-        view: {
-          // More info about view: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-view
-          calendar: { labels: true },
-        },
-        data: myData, // More info about data: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-data
-        onEventClick: function (args) {
-          // More info about onEventClick: https://docs.mobiscroll.com/5-5-1/eventcalendar#event-onEventClick
-          oldEvent = { ...args.event };
-          tempEvent = args.event;
-
-          if (!popup.isVisible()) {
-            createEditPopup(args);
-          }
-        },
-        onEventCreated: function (args) {
-          // More info about onEventCreated: https://docs.mobiscroll.com/5-5-1/eventcalendar#event-onEventCreated
-          popup.close();
-
-          // store temporary event
-          tempEvent = args.event;
-          createAddPopup(args.target);
-        },
-        onEventDeleted: function () {
-          // More info about onEventDeleted: https://docs.mobiscroll.com/5-5-1/eventcalendar#event-onEventDeleted
-          mobiscroll.snackbar({
-            button: {
-              action: function () {
-                calendar.addEvent(args.event);
-              },
-              text: "Undo",
-            },
-            message: "Event deleted",
-          });
-        },
-      })
-      .mobiscroll("getInst");
-
-    var popup = $("#demo-add-popup")
-      .mobiscroll()
-      .popup({
-        display: "bottom", // Specify display mode like: display: 'bottom' or omit setting to use default
-        contentPadding: false,
-        fullScreen: true,
-        onClose: function () {
-          // More info about onClose: https://docs.mobiscroll.com/5-5-1/eventcalendar#event-onClose
-          if (deleteEvent) {
-            calendar.removeEvent(tempEvent);
-          } else if (restoreEvent) {
-            calendar.updateEvent(oldEvent);
-          }
-        },
-        responsive: {
-          // More info about responsive: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-responsive
-          medium: {
-            display: "anchored", // Specify display mode like: display: 'bottom' or omit setting to use default
-            width: 400, // More info about width: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-width
-            fullScreen: false,
-            touchUi: false,
-          },
-        },
-      })
-      .mobiscroll("getInst");
-
-    $title.on("input", function (ev) {
-      // update current event's title
-      tempEvent.title = ev.target.value;
-    });
-
-    $description.on("change", function (ev) {
-      // update current event's title
-      tempEvent.description = ev.target.value;
-    });
-
-    $allDay.on("change", function () {
-      var checked = this.checked;
-
-      // change range settings based on the allDay
-      range.setOptions({
-        controls: checked ? ["date"] : ["datetime"],
-        responsive: checked ? datePickerResponsive : datetimePickerResponsive,
-      });
-
-      // update current event's allDay property
-      tempEvent.allDay = checked;
-    });
-
-    var range = $("#event-date")
-      .mobiscroll()
-      .datepicker({
-        controls: ["date"],
-        select: "range",
-        startInput: "#start-input",
-        endInput: "#end-input",
-        showRangeLabels: false,
-        touchUi: true,
-        responsive: datePickerResponsive, // More info about responsive: https://docs.mobiscroll.com/5-5-1/eventcalendar#opt-responsive
-        onChange: function (args) {
-          var date = args.value;
-
-          // update event's start date
-          tempEvent.start = date[0];
-          tempEvent.end = date[1];
-        },
-      })
-      .mobiscroll("getInst");
-
-    $("input[name=event-status]").on("change", function () {
-      // update current event's free property
-      tempEvent.free = $statusFree.mobiscroll("getInst").checked;
-    });
-
-    $deleteButton.on("click", function () {
-      // delete current event on button click
-      calendar.removeEvent(oldEvent);
-
-      popup.close();
-
-      mobiscroll.snackbar({
-        button: {
-          action: function () {
-            calendar.addEvent(tempEvent);
-          },
-          text: "Undo",
-        },
-        message: "Event deleted",
-      });
-    });
+  $("#btnEdit").click(function () {
+    //Open modal dialog for edit event
+    openAddEditForm();
   });
+  $("#btnDelete").click(function () {
+    //Validation/
+
+    $("#myModal").modal("hide");
+  });
+
+  $("#chkIsFullDay").change(function () {
+    if ($(this).is(":checked")) {
+      $("#divEndDate").hide();
+    } else {
+      $("#divEndDate").show();
+    }
+  });
+
+  $("#datetimepickerStart,#datetimepickerEnd").datetimepicker({
+    format: "DD-MM-YYYY hh:mm A",
+    icons: {
+      time: "fas fa-clock",
+      date: "fas fa-calendar",
+      up: "fas fa-chevron-up",
+      down: "fas fa-chevron-down",
+      previous: "fas fa-chevron-left",
+      next: "fas fa-chevron-right",
+      today: "fas fa-check",
+      clear: "fas fa-trash",
+      close: "fas fa-times",
+    },
+  });
+
+  function openAddEditForm() {
+    $("#myModal").modal("hide");
+    $("#myModalSave").modal();
+  }
+
+  $("#btnSave").click(function () {
+    //Validation/
+
+    SaveEvent();
+  });
+
+  function SaveEvent() {
+    //Validation/
+
+    $("#myModalSave").modal("hide");
+  }
 })(jQuery);
